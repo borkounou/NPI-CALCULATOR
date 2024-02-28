@@ -1,20 +1,6 @@
 # L'algorithme qui réalise une calculatrice en notation polonaise inverse (NPI)
 from .database import NPIResultData
 
-'''
-Voici les étapes à suivre pour faire l'algorithme NPI:
-1 - Définir une pile vide 
-2 - Lire l'expression NPI caractère par caractère
-3 - Si le caractère est un opérande (chiffre):
-    - Pousser le nombre sur la pile
-4 - Sinon si le caractère est un operateur:
-    - Dépiler les deux derniers nombresde la pile
-    - Effectuer l'opération correspondante sur les deux nombres.
-    - Pousser le résultat sur la pile
-5. Répéter les étapes 2 à 4 jusqu'à la fin de l'expression
-6. Le résultat final est le nombre au sommet de la pile. 
-
-'''
 
 
 def polonaise_npi(expression):
@@ -26,7 +12,7 @@ def polonaise_npi(expression):
 
     Retourne: 
        
-        Le résultat de l'évaluation de l'
+        Le résultat de l'évaluation
     """
     pile = []
     tokens = " ".join(expression).split() if len(expression)==5 else expression.split()
@@ -51,7 +37,7 @@ def polonaise_npi(expression):
                 result = op1 / op2
             else:
                 raise ValueError("Opérateur invalide")
-            
+        
             pile.append(result)
            
     return  NPIResultData(expression=expression,result=str(pile.pop()))
