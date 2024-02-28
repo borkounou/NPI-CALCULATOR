@@ -1,5 +1,5 @@
 # L'algorithme qui réalise une calculatrice en notation polonaise inverse (NPI)
-from database import NPIResultData
+from .database import NPIResultData
 
 '''
 Voici les étapes à suivre pour faire l'algorithme NPI:
@@ -29,7 +29,8 @@ def polonaise_npi(expression):
         Le résultat de l'évaluation de l'
     """
     pile = []
-    for token in expression.split():
+    tokens = " ".join(expression).split() if len(expression)==5 else expression.split()
+    for token in tokens:
         if token.isdigit():
             pile.append(int(token))
         else:

@@ -2,13 +2,17 @@ version: '3'
 services:
   backend:
     build:
-      context: ./backend
+      context: ./Backend
       dockerfile: Dockerfile
     ports:
       - '8000:8000'
+    restart: always
+    # working_dir: /backend
   frontend:
     build:
       context: ./npi-calculator
       dockerfile: Dockerfile
     ports:
       - '3000:80'
+    restart: always
+

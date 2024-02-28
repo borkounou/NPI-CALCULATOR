@@ -11,12 +11,12 @@ function App() {
   const [csvMessage, setCsvMessage] = useState(null)
 
   const submitHandler = ()=>{
-      axios.post('http://localhost:8000/api/calculator',{'expression':expression}).then(res=>{
+      axios.post('http://127.0.0.1:8000/api/calculator',{'expression':expression}).then(res=>{
         setResult(res.data.result); 
         setError(null);
       
     }).catch(error=>{
-      console.error('Error:', error);
+      // console.error('Error:', error);
       setResult(null); // Reset result state
       setError('Something went wrong. Please type a valid expression.');
 
@@ -26,7 +26,7 @@ function App() {
 
   const handleExportToCSV = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/calculator', {
+      const response = await axios.get('http://127.0.0.1:8000/api/calculator', {
         responseType: 'blob' // Set response type to blob to receive binary data
       });
       const url = window.URL.createObjectURL(new Blob([response.data]));

@@ -1,0 +1,6 @@
+fastapi
+motor
+pandas
+pymongo
+uvicorn
+python-multipart
