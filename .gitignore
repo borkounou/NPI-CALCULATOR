@@ -1,3 +1,4 @@
 npi-calculator/node_modules
 Backend/app/__pycache__
+__pycache__*
 Backend/.env
