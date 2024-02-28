@@ -2,8 +2,6 @@ from .model import NPIResultData
 import os
 # MongoDB driver
 import motor.motor_asyncio
-# password= os.getenv('PASSWORD')
-# username = os.getenv('USERNAME')
 
 # This mongodb url is just used for test, it is not a good pratice to show all your credentials, you have put all your credentials in environmment variables. 
 
@@ -33,10 +31,6 @@ async def send_result(resultdata):
 async def fetch_all_data():
     result = []
     cursor = collection.find({})
-    # data = [{"expression":doc["expression"], "result":doc["result"]} for doc in cursor]
-    # df = pd.DataFrame(data)
-    # df.to_csv("results.csv", index=False)
-
     async for document in cursor:
         result.append(NPIResultData(**document))
 

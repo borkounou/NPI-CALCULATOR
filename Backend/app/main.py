@@ -17,7 +17,6 @@ app.add_middleware(
 )
 
 
-
 @app.get("/api/calculator")
 async def get_data():
     response = await fetch_all_data()

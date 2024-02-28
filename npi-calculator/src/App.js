@@ -16,7 +16,7 @@ function App() {
         setError(null);
       
     }).catch(error=>{
-      // console.error('Error:', error);
+      console.error('Error:', error);
       setResult(null); // Reset result state
       setError('Something went wrong. Please type a valid expression.');
 
