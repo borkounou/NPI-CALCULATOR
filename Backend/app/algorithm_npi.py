@@ -13,6 +13,7 @@ def polonaise_npi(expression):
     Retourne: 
        
         Le résultat de l'évaluation
+        le resultat de l'evaluation c'est juste 
     """
     pile = []
     tokens = " ".join(expression).split() if len(expression)==5 else expression.split()
